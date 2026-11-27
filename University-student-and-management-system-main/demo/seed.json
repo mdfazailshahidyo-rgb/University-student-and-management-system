@@ -1,0 +1,97 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "username": "admin",
+      "full_name": "Dr. A. Sharma",
+      "email": "admin@mduniversity.edu",
+      "salt": "dbaee177ea51c33df84a45193e389132",
+      "hash": "e2640063b2be3ec1a379e99a09abdd6fcc646dcbda5df37f338fb96b6bb5de9f157c4b1caeda3af1129a8c46d357a36a1e2152abee9d88ccac6eabc22e6c11e4",
+      "created_at": "2026-11-01T00:00:00Z"
+    }
+  ],
+  "students": [
+    {
+      "id": 1,
+      "register_no": "BCA2024001",
+      "name": "Aarav Mehta",
+      "course": "BCA",
+      "semester": 4,
+      "email": "aarav.mehta@mduniversity.edu",
+      "contact": "9876501234",
+      "created_at": "2026-11-24T09:15:00Z"
+    },
+    {
+      "id": 2,
+      "register_no": "BCA2024002",
+      "name": "Diya Nair",
+      "course": "BCA",
+      "semester": 4,
+      "email": "diya.nair@mduniversity.edu",
+      "contact": "9876501235",
+      "created_at": "2026-11-23T11:40:00Z"
+    },
+    {
+      "id": 3,
+      "register_no": "BCA2024003",
+      "name": "Rohan Kulkarni",
+      "course": "BCA",
+      "semester": 2,
+      "email": "rohan.kulkarni@mduniversity.edu",
+      "contact": "9876501236",
+      "created_at": "2026-11-21T08:05:00Z"
+    },
+    {
+      "id": 4,
+      "register_no": "BCA2024004",
+      "name": "Sneha Iyer",
+      "course": "BCA",
+      "semester": 6,
+      "email": "sneha.iyer@mduniversity.edu",
+      "contact": "9876501237",
+      "created_at": "2026-11-19T14:20:00Z"
+    },
+    {
+      "id": 5,
+      "register_no": "BSC2024011",
+      "name": "Kabir Shetty",
+      "course": "B.Sc Computer Science",
+      "semester": 3,
+      "email": "kabir.shetty@mduniversity.edu",
+      "contact": "9876501238",
+      "created_at": "2026-11-18T10:10:00Z"
+    },
+    {
+      "id": 6,
+      "register_no": "BSC2024012",
+      "name": "Ananya Rao",
+      "course": "B.Sc Computer Science",
+      "semester": 5,
+      "email": "ananya.rao@mduniversity.edu",
+      "contact": "9876501239",
+      "created_at": "2026-11-17T16:45:00Z"
+    },
+    {
+      "id": 7,
+      "register_no": "BCOM202401",
+      "name": "Vikram Patil",
+      "course": "B.Com",
+      "semester": 1,
+      "email": "vikram.patil@mduniversity.edu",
+      "contact": "9876501240",
+      "created_at": "2026-11-16T09:00:00Z"
+    },
+    {
+      "id": 8,
+      "register_no": "BBA2024007",
+      "name": "Meera Krishnan",
+      "course": "BBA",
+      "semester": 7,
+      "email": "meera.krishnan@mduniversity.edu",
+      "contact": "9876501241",
+      "created_at": "2026-11-15T12:30:00Z"
+    }
+  ],
+  "nextUserId": 2,
+  "nextStudentId": 9
+}

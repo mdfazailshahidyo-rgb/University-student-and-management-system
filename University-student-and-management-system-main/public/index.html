@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="MD University Student Information and Academic Management System">
+  <title>MD University · Student Management System</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+
+<!-- Icon sprite -->
+<svg class="icon-sprite" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+  <symbol id="i-cap" viewBox="0 0 24 24"><path d="M2 8.5 12 4l10 4.5-10 4.5L2 8.5Z"/><path d="M6 10.7V16c0 1.7 2.7 3 6 3s6-1.3 6-3v-5.3"/><path d="M22 8.5V14"/></symbol>
+  <symbol id="i-grid" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></symbol>
+  <symbol id="i-users" viewBox="0 0 24 24"><path d="M16 20v-1.5a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4V20"/><circle cx="9" cy="7" r="4"/><path d="M22 20v-1.5a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></symbol>
+  <symbol id="i-xml" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6"/><path d="m9 13 2.5 3L9 19"/><path d="m15 13-2.5 3L15 19"/></symbol>
+  <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+  <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></symbol>
+  <symbol id="i-edit" viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/></symbol>
+  <symbol id="i-trash" viewBox="0 0 24 24"><path d="M3 6h18M8 6V4h8v2M19 6l-1 14H6L5 6"/><path d="M10 11v5M14 11v5"/></symbol>
+  <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3v12m0 0 4-4m-4 4-4-4"/><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></symbol>
+  <symbol id="i-external" viewBox="0 0 24 24"><path d="M14 4h6v6"/><path d="m10 14 10-10"/><path d="M20 14v4a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h4"/></symbol>
+  <symbol id="i-logout" viewBox="0 0 24 24"><path d="M10 4H6a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h4"/><path d="m14 8 4 4-4 4M18 12H9"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></symbol>
+  <symbol id="i-chevron" viewBox="0 0 24 24"><path d="m9 5 7 7-7 7"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol>
+  <symbol id="i-alert" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16.5v.5"/></symbol>
+  <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></symbol>
+  <symbol id="i-lock" viewBox="0 0 24 24"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m3 6 9 7 9-7"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.9.3 1.9.6 2.9.7a2 2 0 0 1 1.7 2Z"/></symbol>
+  <symbol id="i-refresh" viewBox="0 0 24 24"><path d="M20 11a8 8 0 1 0-2.3 6.6"/><path d="M20 4v7h-7"/></symbol>
+  <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h16m0 0-6-6m6 6-6 6"/></symbol>
+  <symbol id="i-db" viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v14c0 1.7 3.6 3 8 3s8-1.3 8-3V5"/><path d="M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/></symbol>
+  <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></symbol>
+  <symbol id="i-eye-off" viewBox="0 0 24 24"><path d="m3 3 18 18"/><path d="M10.6 5.2A10.7 10.7 0 0 1 12 5c6.4 0 10 7 10 7a17 17 0 0 1-3.1 3.9"/><path d="M6.2 6.3A17 17 0 0 0 2 12s3.6 7 10 7a10 10 0 0 0 3.4-.6"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/></symbol>
+  <symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M7 3v4M17 3v4M3 10h18"/></symbol>
+  <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8v.5"/></symbol>
+</svg>
+
+<!-- Loading splash -->
+<div class="boot" id="boot">
+  <div class="boot__mark"><svg class="icon"><use href="#i-cap"/></svg></div>
+  <div class="boot__name">MD University</div>
+  <div class="boot__bar"><span></span></div>
+</div>
+
+<!-- ========================= LOGIN / REGISTRATION (SPLASH) ========================= -->
+<section class="auth-screen" id="auth-screen" hidden>
+  <div class="auth-visual">
+    <div class="brand brand--light">
+      <span class="brand__mark"><svg class="icon"><use href="#i-cap"/></svg></span>
+      <span class="brand__text"><strong>MD University</strong><small>Student Information System</small></span>
+    </div>
+
+    <div class="auth-visual__body">
+      <span class="eyebrow eyebrow--light"><span class="eyebrow__dot"></span> ACADEMIC YEAR 2026–27</span>
+      <h1>Student records,<br><em>beautifully organised.</em></h1>
+      <p class="auth-visual__lead">One secure workspace to manage admissions, academic details and records — with a live XML view of every student.</p>
+      <div class="auth-highlights">
+        <div class="auth-highlight"><span class="auth-highlight__icon"><svg class="icon"><use href="#i-users"/></svg></span><span><strong>Complete CRUD</strong><small>Add, edit, delete &amp; display</small></span></div>
+        <div class="auth-highlight"><span class="auth-highlight__icon"><svg class="icon"><use href="#i-db"/></svg></span><span><strong>MySQL powered</strong><small>Reliable record storage</small></span></div>
+        <div class="auth-highlight"><span class="auth-highlight__icon"><svg class="icon"><use href="#i-xml"/></svg></span><span><strong>XML ready</strong><small> Portable student data</small></span></div>
+      </div>
+    </div>
+
+    <div class="auth-visual__footer">
+      <div><strong>8</strong><span>Sample records</span></div>
+      <div><strong>6</strong><span>Courses</span></div>
+      <div><strong>24×7</strong><span>Online access</span></div>
+    </div>
+    <div class="auth-visual__orb auth-visual__orb--one"></div>
+    <div class="auth-visual__orb auth-visual__orb--two"></div>
+  </div>
+
+  <div class="auth-panel">
+    <div class="auth-panel__inner">
+      <div class="mobile-brand">
+        <span class="brand__mark"><svg class="icon"><use href="#i-cap"/></svg></span>
+        <span class="brand__text"><strong>MD University</strong><small>Student Information System</small></span>
+      </div>
+
+      <div class="auth-tabs" role="tablist" aria-label="Authentication">
+        <button class="auth-tab is-active" type="button" data-auth-tab="login" role="tab" aria-selected="true">Sign in</button>
+        <button class="auth-tab" type="button" data-auth-tab="register" role="tab" aria-selected="false">Create account</button>
+      </div>
+
+      <!-- Login form -->
+      <div class="auth-form" id="auth-form-login">
+        <h2 class="auth-form__title">Welcome back</h2>
+        <p class="auth-form__subtitle">Sign in to access the student records workspace.</p>
+
+        <form id="login-form" novalidate>
+          <div class="field">
+            <label for="login-username">Username or email</label>
+            <div class="input-wrap"><svg class="icon"><use href="#i-user"/></svg><input id="login-username" name="username" type="text" autocomplete="username" placeholder="e.g. admin"></div>
+            <span class="field-error" id="login-username-error"></span>
+          </div>
+          <div class="field">
+            <label for="login-password">Password</label>
+            <div class="input-wrap"><svg class="icon"><use href="#i-lock"/></svg><input id="login-password" name="password" type="password" autocomplete="current-password" placeholder="Enter your password"><button class="input-toggle" type="button" data-toggle-password="login-password" aria-label="Show password"><svg class="icon"><use href="#i-eye"/></svg></button></div>
+            <span class="field-error" id="login-password-error"></span>
+          </div>
+          <div class="form-meta">
+            <label class="check"><input type="checkbox" id="login-remember"><span></span> Remember me</label>
+            <button class="link-btn" type="button" id="forgot-link">Forgot password?</button>
+          </div>
+          <p class="form-alert" id="login-alert" hidden></p>
+          <button class="btn btn-primary btn-block" type="submit">Sign in <svg class="icon"><use href="#i-arrow"/></svg></button>
+        </form>
+
+        <p class="auth-switch">New to the system? <button class="link-btn" type="button" data-auth-tab="register">Create an account</button></p>
+      </div>
+
+      <!-- Registration form -->
+      <div class="auth-form" id="auth-form-register" hidden>
+        <h2 class="auth-form__title">Create your account</h2>
+        <p class="auth-form__subtitle">Register to manage university student records.</p>
+
+        <form id="register-form" novalidate>
+          <div class="field">
+            <label for="reg-full-name">Full name</label>
+            <div class="input-wrap"><svg class="icon"><use href="#i-user"/></svg><input id="reg-full-name" name="full_name" type="text" autocomplete="name" placeholder="Your full name"></div>
+            <span class="field-error" id="reg-full_name-error"></span>
+          </div>
+          <div class="field-row">
+            <div class="field">
+              <label for="reg-username">Username</label>
+              <div class="input-wrap"><input id="reg-username" name="username" type="text" autocomplete="username" placeholder="3-30 characters"></div>
+              <span class="field-error" id="reg-username-error"></span>
+            </div>
+            <div class="field">
+              <label for="reg-email">Email ID</label>
+              <div class="input-wrap"><input id="reg-email" name="email" type="email" autocomplete="email" placeholder="name@college.edu"></div>
+              <span class="field-error" id="reg-email-error"></span>
+            </div>
+          </div>
+          <div class="field-row">
+            <div class="field">
+              <label for="reg-password">Password</label>
+              <div class="input-wrap"><svg class="icon"><use href="#i-lock"/></svg><input id="reg-password" name="password" type="password" autocomplete="new-password" placeholder="Min. 6 characters"><button class="input-toggle" type="button" data-toggle-password="reg-password" aria-label="Show password"><svg class="icon"><use href="#i-eye"/></svg></button></div>
+              <span class="field-error" id="reg-password-error"></span>
+            </div>
+            <div class="field">
+              <label for="reg-confirm">Confirm password</label>
+              <div class="input-wrap"><svg class="icon"><use href="#i-lock"/></svg><input id="reg-confirm" name="confirm_password" type="password" autocomplete="new-password" placeholder="Repeat password"></div>
+              <span class="field-error" id="reg-confirm_password-error"></span>
+            </div>
+          </div>
+          <p class="form-alert" id="register-alert" hidden></p>
+          <button class="btn btn-primary btn-block" type="submit">Create account <svg class="icon"><use href="#i-arrow"/></svg></button>
+        </form>
+
+        <p class="auth-switch">Already registered? <button class="link-btn" type="button" data-auth-tab="login">Sign in instead</button></p>
+      </div>
+
+      <p class="auth-legal">© 2026 MD University · Student Information &amp; Academic Management System</p>
+    </div>
+  </div>
+</section>
+
+<!-- ========================= AUTHENTICATED APPLICATION ========================= -->
+<div class="app-shell" id="app-shell" hidden>
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar__brand">
+      <span class="brand__mark"><svg class="icon"><use href="#i-cap"/></svg></span>
+      <span class="brand__text"><strong>MD University</strong><small>Academic workspace</small></span>
+      <button class="sidebar__close icon-btn" id="sidebar-close" aria-label="Close menu"><svg class="icon"><use href="#i-close"/></svg></button>
+    </div>
+
+    <nav class="sidebar__nav" aria-label="Main navigation">
+      <span class="nav-label">WORKSPACE</span>
+      <button class="nav-item is-active" type="button" data-nav="dashboard"><svg class="icon"><use href="#i-grid"/></svg><span>Dashboard</span></button>
+      <button class="nav-item" type="button" data-nav="students"><svg class="icon"><use href="#i-users"/></svg><span>Students</span><span class="nav-count" id="nav-student-count">0</span></button>
+      <button class="nav-item" type="button" data-nav="xml"><svg class="icon"><use href="#i-xml"/></svg><span>XML Records</span></button>
+    </nav>
+
+    <div class="sidebar__spacer"></div>
+
+    <div class="sidebar__card">
+      <svg class="icon"><use href="#i-xml"/></svg>
+      <strong>Need portable records?</strong>
+      <p>Export every student as a structured XML document.</p>
+      <button class="btn btn-sidebar" type="button" data-nav="xml">Open XML page <svg class="icon"><use href="#i-chevron"/></svg></button>
+    </div>
+
+    <div class="sidebar__user">
+      <span class="avatar" id="sidebar-avatar">AD</span>
+      <span class="sidebar__user-info"><strong id="sidebar-name">Admin</strong><small id="sidebar-username">@admin</small></span>
+      <button class="icon-btn" id="logout-btn" title="Sign out" aria-label="Sign out"><svg class="icon"><use href="#i-logout"/></svg></button>
+    </div>
+  </aside>
+  <div class="sidebar-backdrop" id="sidebar-backdrop" hidden></div>
+
+  <div class="app-main">
+    <header class="topbar">
+      <button class="icon-btn mobile-menu" id="menu-toggle" aria-label="Open menu"><svg class="icon"><use href="#i-menu"/></svg></button>
+      <div class="topbar__title"><span id="page-kicker">WORKSPACE</span><h1 id="page-title">Dashboard</h1></div>
+      <div class="topbar__actions">
+        <span class="topbar__date"><svg class="icon"><use href="#i-calendar"/></svg><span id="topbar-date">—</span></span>
+        <a class="btn btn-outline" href="xml.php" target="_blank" rel="noopener"><svg class="icon"><use href="#i-xml"/></svg><span>View XML</span><svg class="icon icon-sm"><use href="#i-external"/></svg></a>
+        <span class="avatar avatar--topbar" id="topbar-avatar">AD</span>
+      </div>
+    </header>
+
+    <main class="content">
+      <!-- ---------- Dashboard ---------- -->
+      <section class="view" id="view-dashboard">
+        <div class="hero">
+          <div class="hero__content">
+            <span class="eyebrow eyebrow--light"><span class="eyebrow__dot"></span> STUDENT INFORMATION SYSTEM</span>
+            <h2 id="dash-greeting">Welcome back</h2>
+            <p>Here's a snapshot of the academic records in your university workspace.</p>
+            <div class="hero__actions">
+              <button class="btn btn-light" type="button" data-action="open-add"><svg class="icon"><use href="#i-plus"/></svg> Add new student</button>
+              <button class="btn btn-hero-ghost" type="button" data-nav="students">Manage records <svg class="icon"><use href="#i-arrow"/></svg></button>
+            </div>
+          </div>
+          <div class="hero__art" aria-hidden="true">
+            <div class="hero__ring"></div><div class="hero__ring hero__ring--two"></div>
+            <div class="hero__card"><svg class="icon"><use href="#i-cap"/></svg><span>MD</span></div>
+            <div class="hero__chip hero__chip--one">BCA · Sem 4</div>
+            <div class="hero__chip hero__chip--two">Records updated</div>
+          </div>
+        </div>
+
+        <div class="stats-grid">
+          <article class="stat-card"><span class="stat-card__icon stat-card__icon--indigo"><svg class="icon"><use href="#i-users"/></svg></span><span class="stat-card__label">Total students</span><strong id="stat-total">0</strong><small>Across all courses</small></article>
+          <article class="stat-card"><span class="stat-card__icon stat-card__icon--teal"><svg class="icon"><use href="#i-cap"/></svg></span><span class="stat-card__label">Courses offered</span><strong id="stat-courses">0</strong><small>Active programmes</small></article>
+          <article class="stat-card"><span class="stat-card__icon stat-card__icon--amber"><svg class="icon"><use href="#i-grid"/></svg></span><span class="stat-card__label">Average semester</span><strong id="stat-semester">—</strong><small>Of enrolled students</small></article>
+          <article class="stat-card"><span class="stat-card__icon stat-card__icon--violet"><svg class="icon"><use href="#i-calendar"/></svg></span><span class="stat-card__label">New this week</span><strong id="stat-recent">0</strong><small>Recently added</small></article>
+        </div>
+
+        <div class="dashboard-grid">
+          <section class="panel">
+            <div class="panel__head"><div><h3>Recent admissions</h3><p>The latest student records added</p></div><button class="link-btn" type="button" data-nav="students">View all <svg class="icon icon-sm"><use href="#i-chevron"/></svg></button></div>
+            <div class="table-wrap"><table class="data-table"><thead><tr><th>Student</th><th>Course</th><th>Sem</th><th>Registered</th></tr></thead><tbody id="recent-tbody"></tbody></table></div>
+          </section>
+          <section class="panel">
+            <div class="panel__head"><div><h3>Course distribution</h3><p>Students enrolled per programme</p></div><svg class="icon panel__icon"><use href="#i-db"/></svg></div>
+            <div class="course-bars" id="course-bars"></div>
+          </section>
+        </div>
+      </section>
+
+      <!-- ---------- Students ---------- -->
+      <section class="view" id="view-students" hidden>
+        <div class="page-head">
+          <div><span class="page-head__eyebrow">MODULE 02 · STUDENT MANAGEMENT</span><h2>Student records</h2><p>Add, edit, delete and search student information.</p></div>
+          <button class="btn btn-primary" type="button" data-action="open-add"><svg class="icon"><use href="#i-plus"/></svg> Add student</button>
+        </div>
+
+        <div class="filter-bar">
+          <div class="search-box"><svg class="icon"><use href="#i-search"/></svg><input id="student-search" type="search" placeholder="Search name, register number or email…" autocomplete="off"></div>
+          <select id="course-filter" aria-label="Filter by course"><option value="">All courses</option></select>
+          <select id="semester-filter" aria-label="Filter by semester"><option value="">All semesters</option><option value="1">Semester 1</option><option value="2">Semester 2</option><option value="3">Semester 3</option><option value="4">Semester 4</option><option value="5">Semester 5</option><option value="6">Semester 6</option><option value="7">Semester 7</option><option value="8">Semester 8</option></select>
+          <button class="btn btn-quiet" type="button" id="clear-filters"><svg class="icon"><use href="#i-refresh"/></svg> Reset</button>
+        </div>
+
+        <section class="panel panel--table">
+          <div class="panel__head"><div><h3>All students <span class="pill" id="results-count">0</span></h3><p id="results-info">Showing all student records</p></div></div>
+          <div class="table-wrap">
+            <table class="data-table data-table--students">
+              <thead><tr><th>Register no.</th><th>Student</th><th>Course</th><th>Semester</th><th>Contact</th><th class="col-actions">Actions</th></tr></thead>
+              <tbody id="students-tbody"></tbody>
+            </table>
+          </div>
+          <div class="empty-state" id="students-empty" hidden>
+            <span class="empty-state__icon"><svg class="icon"><use href="#i-search"/></svg></span>
+            <h4>No students found</h4>
+            <p id="empty-message">Try a different search or add a new record.</p>
+            <button class="btn btn-outline" type="button" data-action="open-add"><svg class="icon"><use href="#i-plus"/></svg> Add student</button>
+          </div>
+        </section>
+      </section>
+
+      <!-- ---------- XML ---------- -->
+      <section class="view" id="view-xml" hidden>
+        <div class="page-head">
+          <div><span class="page-head__eyebrow">MODULE 04 · XML COMPONENT</span><h2>XML student records</h2><p>Student details served as a structured, well-formed XML document.</p></div>
+          <div class="page-head__actions">
+            <a class="btn btn-outline" href="xml.php" target="_blank" rel="noopener"><svg class="icon"><use href="#i-external"/></svg> Raw XML</a>
+            <a class="btn btn-outline" href="xml.php?download=1"><svg class="icon"><use href="#i-download"/></svg> Download</a>
+            <button class="btn btn-primary" type="button" id="xml-refresh"><svg class="icon"><use href="#i-refresh"/></svg> Refresh</button>
+          </div>
+        </div>
+
+        <div class="xml-banner"><span class="xml-banner__icon"><svg class="icon"><use href="#i-xml"/></svg></span><div><strong>Live XML document</strong><p>Generated from the MySQL student table at <code>xml.php</code>. Each record contains register number, name, course, semester and email.</p></div><span class="xml-banner__badge" id="xml-record-count">0 records</span></div>
+
+        <div class="xml-grid">
+          <section class="panel">
+            <div class="panel__head"><div><h3>Parsed records</h3><p>Displayed from the XML document using DOMParser</p></div></div>
+            <div class="xml-records" id="xml-records"></div>
+          </section>
+          <section class="panel">
+            <div class="panel__head"><div><h3>Document source</h3><p>The XML returned by the server</p></div><span class="pill pill--teal">application/xml</span></div>
+            <pre class="code-block"><code id="xml-code">Loading XML document…</code></pre>
+          </section>
+        </div>
+      </section>
+    </main>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal-backdrop" id="modal" hidden>
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal__head"><h3 id="modal-title">Modal</h3><button class="icon-btn" id="modal-close" aria-label="Close dialog"><svg class="icon"><use href="#i-close"/></svg></button></div>
+    <div id="modal-body"></div>
+  </div>
+</div>
+
+<div class="toasts" id="toasts" aria-live="polite"></div>
+
+<script src="assets/js/app.js" defer></script>
+</body>
+</html>

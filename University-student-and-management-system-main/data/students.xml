@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  University Student Information & Academic Management System
+  Static XML document containing the sample student records.
+  The live document generated from MySQL is available at api/xml.php (or xml.php).
+-->
+<university name="MD University" generated="2026-11-26">
+  <metadata>
+    <totalRecords>8</totalRecords>
+    <source> MySQL database: university_student_management </source>
+  </metadata>
+  <students>
+    <student id="1">
+      <registerNo>BCA2024001</registerNo>
+      <name>Aarav Mehta</name>
+      <course>BCA</course>
+      <semester>4</semester>
+      <email>aarav.mehta@mduniversity.edu</email>
+      <contact>9876501234</contact>
+    </student>
+    <student id="2">
+      <registerNo>BCA2024002</registerNo>
+      <name>Diya Nair</name>
+      <course>BCA</course>
+      <semester>4</semester>
+      <email>diya.nair@mduniversity.edu</email>
+      <contact>9876501235</contact>
+    </student>
+    <student id="3">
+      <registerNo>BCA2024003</registerNo>
+      <name>Rohan Kulkarni</name>
+      <course>BCA</course>
+      <semester>2</semester>
+      <email>rohan.kulkarni@mduniversity.edu</email>
+      <contact>9876501236</contact>
+    </student>
+    <student id="4">
+      <registerNo>BCA2024004</registerNo>
+      <name>Sneha Iyer</name>
+      <course>BCA</course>
+      <semester>6</semester>
+      <email>sneha.iyer@mduniversity.edu</email>
+      <contact>9876501237</contact>
+    </student>
+    <student id="5">
+      <registerNo>BSC2024011</registerNo>
+      <name>Kabir Shetty</name>
+      <course>B.Sc Computer Science</course>
+      <semester>3</semester>
+      <email>kabir.shetty@mduniversity.edu</email>
+      <contact>9876501238</contact>
+    </student>
+    <student id="6">
+      <registerNo>BSC2024012</registerNo>
+      <name>Ananya Rao</name>
+      <course>B.Sc Computer Science</course>
+      <semester>5</semester>
+      <email>ananya.rao@mduniversity.edu</email>
+      <contact>9876501239</contact>
+    </student>
+    <student id="7">
+      <registerNo>BCOM202401</registerNo>
+      <name>Vikram Patil</name>
+      <course>B.Com</course>
+      <semester>1</semester>
+      <email>vikram.patil@mduniversity.edu</email>
+      <contact>9876501240</contact>
+    </student>
+    <student id="8">
+      <registerNo>BBA2024007</registerNo>
+      <name>Meera Krishnan</name>
+      <course>BBA</course>
+      <semester>7</semester>
+      <email>meera.krishnan@mduniversity.edu</email>
+      <contact>9876501241</contact>
+    </student>
+  </students>
+</university>
